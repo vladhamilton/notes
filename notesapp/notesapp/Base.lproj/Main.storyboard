@@ -139,6 +139,7 @@
                             <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="UtL-h7-9QX" id="z43-9g-ZQQ"/>
+                                <segue destination="T48-BE-ODH" kind="unwind" unwindAction="unwindSegue:" id="mQt-fa-2vh"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
