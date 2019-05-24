@@ -12,6 +12,10 @@
 		F090BCA822988D8300A28115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F090BCA622988D8300A28115 /* Main.storyboard */; };
 		F090BCAA22988D8900A28115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F090BCA922988D8900A28115 /* Assets.xcassets */; };
 		F090BCAD22988D8900A28115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F090BCAB22988D8900A28115 /* LaunchScreen.storyboard */; };
+		F090BCB52298902600A28115 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F090BCB42298902600A28115 /* NewNoteViewController.swift */; };
+		F090BCB72298904D00A28115 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F090BCB62298904D00A28115 /* CustomTableViewCell.swift */; };
+		F090BCBA2298906900A28115 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F090BCB82298906900A28115 /* Notes.xcdatamodeld */; };
+		F090BCBC2298907A00A28115 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F090BCBB2298907A00A28115 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		F090BCA922988D8900A28115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F090BCAC22988D8900A28115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F090BCAE22988D8900A28115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F090BCB42298902600A28115 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		F090BCB62298904D00A28115 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		F090BCB92298906900A28115 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
+		F090BCBB2298907A00A28115 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				F090BCA222988D8300A28115 /* AppDelegate.swift */,
 				F090BCA422988D8300A28115 /* MainViewController.swift */,
+				F090BCB42298902600A28115 /* NewNoteViewController.swift */,
+				F090BCB62298904D00A28115 /* CustomTableViewCell.swift */,
+				F090BCBB2298907A00A28115 /* CoreDataStack.swift */,
+				F090BCB82298906900A28115 /* Notes.xcdatamodeld */,
 				F090BCA622988D8300A28115 /* Main.storyboard */,
 				F090BCA922988D8900A28115 /* Assets.xcassets */,
 				F090BCAB22988D8900A28115 /* LaunchScreen.storyboard */,
@@ -136,7 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F090BCA522988D8300A28115 /* MainViewController.swift in Sources */,
+				F090BCBA2298906900A28115 /* Notes.xcdatamodeld in Sources */,
 				F090BCA322988D8300A28115 /* AppDelegate.swift in Sources */,
+				F090BCBC2298907A00A28115 /* CoreDataStack.swift in Sources */,
+				F090BCB72298904D00A28115 /* CustomTableViewCell.swift in Sources */,
+				F090BCB52298902600A28115 /* NewNoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +354,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F090BCB82298906900A28115 /* Notes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F090BCB92298906900A28115 /* Notes.xcdatamodel */,
+			);
+			currentVersion = F090BCB92298906900A28115 /* Notes.xcdatamodel */;
+			path = Notes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F090BC9722988D8300A28115 /* Project object */;
 }
