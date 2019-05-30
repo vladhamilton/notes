@@ -13,21 +13,21 @@
         <!--Notes-->
         <scene sceneID="cn4-gl-Oqi">
             <objects>
-                <tableViewController id="mii-Sr-sAE" customClass="MainViewController" customModule="notes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mii-Sr-sAE" customClass="MainViewController" customModule="notesapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VAS-0h-KJq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="9DA-yA-shQ" customClass="CustomTableViewCell" customModule="notes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="9DA-yA-shQ" customClass="CustomTableViewCell" customModule="notesapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9DA-yA-shQ" id="zEX-0u-sCL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APm-zF-rDF">
-                                            <rect key="frame" x="16" y="31" width="323" height="58"/>
+                                            <rect key="frame" x="16" y="31" width="297" height="58"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="b42-Pf-7fG"/>
                                             </constraints>
@@ -35,8 +35,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WC6-yz-ULS">
-                                            <rect key="frame" x="16" y="11" width="65.5" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WC6-yz-ULS">
+                                            <rect key="frame" x="16" y="11" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="WC6-yz-ULS" id="YTC-Gs-Ygs"/>
                                     <outlet property="notesLabel" destination="APm-zF-rDF" id="LNt-a1-ltp"/>
-                                    <segue destination="UtL-h7-9QX" kind="show" id="ZpB-H2-v60"/>
+                                    <segue destination="UtL-h7-9QX" kind="show" identifier="showNote" id="ZpB-H2-v60"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -96,6 +96,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FDS-83-qgR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -109,13 +110,13 @@
         <!--New Note View Controller-->
         <scene sceneID="z7y-Jh-Ew4">
             <objects>
-                <viewController id="UtL-h7-9QX" customClass="NewNoteViewController" customModule="notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UtL-h7-9QX" customClass="NewNoteViewController" customModule="notesapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xBb-hp-am2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="A14-i8-D5R">
-                                <rect key="frame" x="16" y="64" width="343" height="539"/>
+                                <rect key="frame" x="16" y="64" width="343" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -175,6 +176,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zgm-PI-UY2">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -190,6 +192,6 @@
         <image name="sort" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZpB-H2-v60"/>
+        <segue reference="OvR-iz-Xe8"/>
     </inferredMetricsTieBreakers>
 </document>

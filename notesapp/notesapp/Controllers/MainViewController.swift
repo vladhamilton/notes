@@ -13,8 +13,8 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
   
   private var fetchResultsController: NSFetchedResultsController<Note>!
   private var searchController: UISearchController!
-  private var filteredResultArray: [Note] = []
-  private var notes: [Note] = []
+  private var filteredResultArray = [Note]()
+  private var notes = [Note]()
   private var isFiltering: Bool {
     return searchController.isActive && searchController.searchBar.text != ""
   }
@@ -131,7 +131,9 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
     let formatter = DateFormatter()
     formatter.dateStyle = .medium
     formatter.timeStyle = .short
-    cell.dateLabel.text = "\(formatter.string(from: note.value(forKeyPath: "date") as! Date))"
+    if let creationDate = note.date {
+      cell.dateLabel.text = formatter.string(from: creationDate)
+    }
     cell.backgroundView = UIImageView(image: bgImage)
     
     return cell

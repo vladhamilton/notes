@@ -13,11 +13,9 @@ class NewNoteViewController: UIViewController {
   
   var currentNote: Note?
   var newNote: Note?
-  var date = Date()
   
   @IBOutlet weak var noteDescriptionTextView: UITextView!
   @IBOutlet weak var saveButton: UIBarButtonItem!
-  @IBOutlet weak var test: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,7 +46,7 @@ class NewNoteViewController: UIViewController {
   private func setupEditScreen() {
     if currentNote != nil {
       noteDescriptionTextView.text = currentNote?.noteDescription
-      date = currentNote!.date!
+      currentNote!.date = Date()
       setupNavigationBar()
     }
   }
@@ -90,20 +88,22 @@ extension NewNoteViewController: UITextViewDelegate {
         do {
           try context.save()
           currentNote?.noteDescription = noteDescriptionTextView.text
-          currentNote?.date = date
+          currentNote?.date = Date()
         } catch let error as NSError {
           print(error.localizedDescription)
         }
-      } else {
+      } else if noteDescriptionTextView.text != "" {
         newNote = Note(context: context)
         newNote!.noteDescription = noteDescriptionTextView.text
-        newNote?.date = date
+        newNote!.date = Date()
         do {
           try context.save()
           print("Success")
         } catch let error as NSError {
           print("Can't save data \(error), \(error.userInfo)")
         }
+      } else {
+        return
       }
     }
   }

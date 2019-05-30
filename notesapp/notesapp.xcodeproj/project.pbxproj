@@ -62,18 +62,58 @@
 		F090BCA122988D8300A28115 /* notesapp */ = {
 			isa = PBXGroup;
 			children = (
-				F090BCA222988D8300A28115 /* AppDelegate.swift */,
-				F090BCA422988D8300A28115 /* MainViewController.swift */,
-				F090BCB42298902600A28115 /* NewNoteViewController.swift */,
-				F090BCB62298904D00A28115 /* CustomTableViewCell.swift */,
-				F090BCBB2298907A00A28115 /* CoreDataStack.swift */,
-				F090BCB82298906900A28115 /* Notes.xcdatamodeld */,
-				F090BCA622988D8300A28115 /* Main.storyboard */,
-				F090BCA922988D8900A28115 /* Assets.xcassets */,
-				F090BCAB22988D8900A28115 /* LaunchScreen.storyboard */,
-				F090BCAE22988D8900A28115 /* Info.plist */,
+				F0D0CB5B229D87C70020948C /* Core Data Helper */,
+				F0D0CB5C229E8D9C0020948C /* Model */,
+				F0D0CB59229D822F0020948C /* Views */,
+				F0D0CB58229D822B0020948C /* Controllers */,
+				F0D0CB5A229D82900020948C /* Support Files */,
 			);
 			path = notesapp;
+			sourceTree = "<group>";
+		};
+		F0D0CB58229D822B0020948C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F090BCA422988D8300A28115 /* MainViewController.swift */,
+				F090BCB42298902600A28115 /* NewNoteViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F0D0CB59229D822F0020948C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F090BCB62298904D00A28115 /* CustomTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0D0CB5A229D82900020948C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F090BCA622988D8300A28115 /* Main.storyboard */,
+				F090BCAB22988D8900A28115 /* LaunchScreen.storyboard */,
+				F090BCA922988D8900A28115 /* Assets.xcassets */,
+				F090BCA222988D8300A28115 /* AppDelegate.swift */,
+				F090BCAE22988D8900A28115 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		F0D0CB5B229D87C70020948C /* Core Data Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F090BCBB2298907A00A28115 /* CoreDataStack.swift */,
+			);
+			path = "Core Data Helper";
+			sourceTree = "<group>";
+		};
+		F0D0CB5C229E8D9C0020948C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F090BCB82298906900A28115 /* Notes.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EXHN4BTS59;
-				INFOPLIST_FILE = notesapp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/notesapp/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -319,7 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EXHN4BTS59;
-				INFOPLIST_FILE = notesapp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/notesapp/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
