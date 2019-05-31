@@ -19,6 +19,8 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
     return searchController.isActive && searchController.searchBar.text != ""
   }
   private let limitCountOfCharacters = 100
+  private let fetchSize = 20
+  private let startIndex = 0
   private let bgImage = UIImage(named: "texture")
   
   func filterContentFor(searchText text: String) {
@@ -32,8 +34,11 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
     
     configureSearchController()
     configureTableView()
+    searchController.searchBar.delegate = self
     
     let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+    fetchRequest.fetchOffset = startIndex
+    fetchRequest.fetchLimit = fetchSize
     let sortDescriptor = NSSortDescriptor(key: "noteDescription", ascending: true)
     fetchRequest.sortDescriptors = [sortDescriptor]
     
@@ -117,13 +122,7 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-    var note: Note
-    
-    if isFiltering {
-      note = filteredResultArray[indexPath.row]
-    } else {
-      note = notes[indexPath.row]
-    }
+    let note = noteToDisplayAt(indexPath: indexPath)
     
     cell.notesLabel?.text = note.value(forKeyPath: "noteDescription") as? String
     cell.notesLabel?.text = cell.notesLabel?.text!.maxLength(length: self.limitCountOfCharacters)
@@ -162,16 +161,8 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showNote" {
       guard let indexPath = tableView.indexPathForSelectedRow else { return }
-      var note: Note
-      
-      if isFiltering {
-        note = filteredResultArray[indexPath.row]
-      } else {
-        note = notes[indexPath.row]
-      }
-      
       let newNoteVC = segue.destination as! NewNoteViewController
-      newNoteVC.currentNote = note
+      newNoteVC.currentNote = noteToDisplayAt(indexPath: indexPath)
     }
   }
   
@@ -219,4 +210,22 @@ extension MainViewController: UISearchResultsUpdating {
   }
 }
 
+extension MainViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      resetSearchState()
+  }
+  
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    searchController.searchBar.showsCancelButton = true
+  }
+  
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    resetSearchState()
+  }
+  
+  func resetSearchState() {
+    searchController.searchBar.showsCancelButton = false
+    searchController.searchBar.endEditing(true)
+  }
+}
 
